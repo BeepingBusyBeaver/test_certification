@@ -121,7 +121,7 @@ if __name__ == "__main__":
     human_cloud = o3d.io.read_point_cloud(human_pcd_path)
 
     center, slice_cloud = estimate_pelvis_center(
-        human_cloud, pelvis_ratio=0.55, band=500
+        human_cloud, pelvis_ratio=0.55, band=100
     )  # pelvis: 94/171cm
 
     # 저장
@@ -158,12 +158,12 @@ if __name__ == "__main__":
     # 라인 지정
     human_cloud.paint_uniform_color([0.7, 0.7, 0.7])
 
-    o3d.visualization.draw_geometries(
-        [
-            human_cloud,
-            slice_cloud,
-            pelvis_sphere,
-            # L_sphere,
-            # R_sphere,
-        ]
-    )
+    # o3d.visualization.draw_geometries(
+    #     [
+    #         human_cloud,
+    #         slice_cloud,
+    #         pelvis_sphere,
+    #         # L_sphere,
+    #         # R_sphere,
+    #     ]
+    # )
